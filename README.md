@@ -69,6 +69,8 @@ The columns have titles "subject", "activity", "variable", and "value".  The nam
 
 The strings in the "variable" column meet the specifications given in Week 4 (http://jtleek.com/modules/03_GettingData/04_01_editingTextVariables/#16; https://class.coursera.org/getdata-013/forum/search?q=lower+case#15-state-query=lower+case) in that they do not contain underscores, dots, or capital letters.  All of these strings start with "average", to indicate that averaging has been performed relative to the original measurements.  Otherwise, the names are relatively self-explanatory.  
 
+The associated CodeBook.md file (see https://class.coursera.org/getdata-013/forum/thread?thread_id=30) gives more information on the contents of the columns in the tidy data set.  
+
 ### References
 
 Anguita, D., Ghio, A., Oneto, L., Parra, X., and Reyes-Ortiz, J. L. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.  Available online at  http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
