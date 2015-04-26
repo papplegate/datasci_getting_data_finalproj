@@ -10,7 +10,7 @@
 # Clear away any variables and functions in memory.  
 rm(list = ls())
 
-# Go get a package we'll need.  
+# Go get some packages we'll need.  
 # install.packages('plyr')
 # install.packages('tidyr')
 # install.packages('reshape2')
