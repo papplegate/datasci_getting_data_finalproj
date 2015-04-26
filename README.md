@@ -1,2 +1,3 @@
-# datasci_getting_data_finalproj
-Final project for Coursera's Getting and Cleaning Data course
+# Code Book, Final Project, Getting and Cleaning Data
+Patrick Applegate, papplega@gmail.com
+
