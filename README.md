@@ -57,13 +57,17 @@ Step 2 asks us to extract only the measurements that contain mean or standard de
 
 Step 3 asks us to replace the activity codes in y_*.txt with the corresponding activity names.  I created a vector of activity names using indexing, not through merge().  I then bound the various tall variables together using cbind, as mentioned above.  
 
-Step 4 asks us to label the variables with easily-readable names.  The first lecture of Week 4 (http://jtleek.com/modules/03_GettingData/04_01_editingTextVariables/#16) suggests that variables should be all lower case and should not include abbreviations.  The discussion forums suggested that underscores or dots in variable names are discouraged.  Following this logic, I used gsub repeatedly to replace the various abbreviations with long-form words, and to delete punctuation from the column names.  
+Step 4 asks us to label the variables with easily-readable names.  The first lecture of Week 4 (http://jtleek.com/modules/03_GettingData/04_01_editingTextVariables/#16) suggests that variables should be all lower case and should not include abbreviations.  The discussion forums further suggest that underscores or dots in variable names are discouraged (https://class.coursera.org/getdata-013/forum/search?q=lower+case#15-state-query=lower+case).  Following this logic, I used gsub repeatedly to replace the various abbreviations with long-form words, and to delete punctuation from the column names.  
 
 Finally, Step 5 involves making the data set tidy, averaging replicate values.  To carry out this step, I first melt()ed the data set using the subject and activity columns as factors.  I then used ddply() to average over the numerical values, using the subject, activity, and variable columns as factors.  
 
-### Results (Code Book)
+### Results
 
+The final tidy data frame has 15,120 rows and 4 columns.  The number of rows agrees with intuition in that there are 30 subjects, six activities per subject, and 84 mean and standard deviation values per subject and activity (30* 6* 84 = 15120).  Given that this data set has many more rows than columns and treats measurement type as a variable, it is a "tall" data set.  Both "wide" and "tall" formats are permitted for this assignment, as emphasized by David Hood, a community Teaching Assistant in the course (https://class.coursera.org/getdata-013/forum/thread?thread_id=30).  
 
+The columns have titles "subject", "activity", "variable", and "value".  The names of the first two columns are self-evident from the discussion above.  The "variable" column contains the measurement type, as expanded in Step 4.  The "value" column contains the averages asked for in the problem statement.  All the measurements were normalized by Anguita et al. (2013) to the [-1, 1] interval, so they do not have units.  
+
+The strings in the "variable" column meet the specifications given in Week 4 (http://jtleek.com/modules/03_GettingData/04_01_editingTextVariables/#16; https://class.coursera.org/getdata-013/forum/search?q=lower+case#15-state-query=lower+case) in that they do not contain underscores, dots, or capital letters.  All of these strings start with "average", to indicate that averaging has been performed relative to the original measurements.  Otherwise, the names are relatively self-explanatory.  
 
 ### References
 
